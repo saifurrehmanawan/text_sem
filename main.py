@@ -1,5 +1,6 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer
+import plotly.graph_objects as go
 import numpy as np
 
 def cosine_similarity(embedding1, embedding2):
@@ -36,5 +37,20 @@ if st.button("Compare Texts"):
         embedding2 = model.encode(text2)
         sharpened_sim = sharpened_cosine_similarity(embedding1, embedding2, exponent=3)
         st.write(sharpened_sim)
+        # Create the gauge chart
+        fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=sharpened_sim,
+        title={"text": "Cosine Similarity"},
+        gauge={
+            "axis": {"range": [0, 1]},
+            "bar": {"color": "blue"},
+            "bgcolor": "lightgray",
+            "steps": [
+                {"range": [0, 0.5], "color": "lightgray"},
+                {"range": [0.5, 1], "color": "lightblue"},
+            ],
+        },
+        ))
     else:
         st.warning ("Please enter both texts to compare.")
