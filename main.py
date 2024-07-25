@@ -1,6 +1,6 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer
-from sharpened_cosine_similarity import SharpenedCosineSimilarity
+#from sharpened_cosine_similarity import SharpenedCosineSimilarity
 model = SentenceTransformer('sentence-transformers/sentence-t5-base')
 
 st.title('Text Similarity Check')
