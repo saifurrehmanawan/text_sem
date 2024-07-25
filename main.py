@@ -36,7 +36,6 @@ if st.button("Compare Texts"):
         embedding1 = model.encode(text1)
         embedding2 = model.encode(text2)
         sharpened_sim = sharpened_cosine_similarity(embedding1, embedding2, exponent=3)
-        st.write(sharpened_sim)
         # Create the gauge chart
         fig = go.Figure(go.Indicator(
         mode="gauge+number",
@@ -52,5 +51,8 @@ if st.button("Compare Texts"):
             ],
         },
         ))
+
+        st.write("This gauge chart displays the cosine similarity score.")
+        st.plotly_chart(fig)
     else:
         st.warning ("Please enter both texts to compare.")
