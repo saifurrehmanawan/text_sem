@@ -17,4 +17,4 @@ if st.button("Compare Texts"):
     if text1 and text2:
         st.text("done")
     else:
-        st.write("Please enter both texts to compare.")
+        st.warning ("Please enter both texts to compare.")
