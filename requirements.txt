@@ -1,2 +1,3 @@
 git+https://github.com/brohrer/sharpened_cosine_similarity.git
 sentence-transformers
+tensorflow 
