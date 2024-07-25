@@ -15,7 +15,6 @@ with col2:
 # Button to trigger comparison
 if st.button("Compare Texts"):
     if text1 and text2:
-  if text1 and text2:
-    st.text("done")
-  else:
-    st.write("Please enter both texts to compare.")
+        st.text("done")
+    else:
+        st.write("Please enter both texts to compare.")
