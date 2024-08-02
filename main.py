@@ -53,4 +53,12 @@ if st.button("Compare Texts"):
                     "bgcolor": "lightgray",
                     "steps": [
                         {"range": [0, 0.5], "color": "lightgray"},
-                        {"range": [0.5, 1], "color
+                        {"range": [0.5, 1], "color": "lightblue"},
+                    ],
+                },
+            ))
+
+            st.write("This gauge chart displays the cosine similarity score.")
+            st.plotly_chart(fig)
+    else:
+        st.warning("Please enter both texts to compare.")
